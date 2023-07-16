@@ -1,0 +1,801 @@
+<html>
+<head>
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  .message {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .message-sent {
+    background-color: #c0ffc0;
+    align-self: flex-end;
+  }
+
+  .message-received {
+    background-color: #c0c0ff;
+    align-self: flex-start;
+  }
+
+  .input {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+
+  .input-text {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 18px;
+  }
+
+  .input-button {
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background-color: #8080ff;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  // Эта функция добавляет сообщение в контейнер сообщений
+  function addMessage(text, type) {
+    // Создаем элемент div для сообщения
+    var message = document.createElement("div");
+    
+    // Добавляем класс message и message-sent или message-received в зависимости от типа
+    message.classList.add("message");
+    
+    if (type === "sent") {
+      message.classList.add("message-sent");
+      
+      // Добавляем текст сообщения
+      message.textContent = text;
+
+      // Добавляем сообщение в конец контейнера сообщений
+      messages.appendChild(message);
+
+      // Прокручиваем контейнер сообщений вниз
+      messages.scrollTop = messages.scrollHeight;
+
+      // Очищаем поле ввода
+      inputText.value = "";
+      
+      // Отправляем сообщение на сервер (пока не реализовано)
+      // sendToServer(text);
+      
+      // Получаем ответ от сервера (пока не реализовано)
+      // getFromServer();
+      
+      // Для демонстрации добавляем случайный ответ через секунду
+      setTimeout(function() {
+        addMessage("Спасибо за сообщение!", "received");
+      }, 1000);
+      
+    } else if (type === "received") {
+      message.classList.add("message-received");
+      
+      // Добавляем текст сообщения
+      message.textContent = text;
+
+      // Добавляем сообщение в конец контейнера сообщений
+      messages.appendChild(message);
+
+      // Прокручиваем контейнер сообщений вниз
+      messages.scrollTop = messages.scrollHeight;      
+    }
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+    
+    
+    
+    
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+  }
+
+  // Эта функция вызывается при нажатии на кнопку отправить или при нажатии на клавишу Enter
+  function sendMessage() {
+    // Получаем текст из поля ввода
+    var text = inputText.value;
+    
+    // Проверяем, что текст не пустой
+    if (text) {
+      // Добавляем сообщение типа sent
+      addMessage(text, "sent");
+    }
+  }
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="header">Мессенджер на html</div>
+  <div class="messages" id="messages"></div>
+  <div class="input">
+    <input type="text" class="input-text" id="inputText" placeholder="Введите сообщение" onkeydown="if (event.keyCode === 13) sendMessage()">
+    <button class="input-button" id="inputButton" onclick="sendMessage()">Отправить</button>
+  </div>
+</div>
+</body>
+</html>
+
